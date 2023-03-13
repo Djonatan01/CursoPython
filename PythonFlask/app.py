@@ -21,5 +21,5 @@ def sobre():
          registros.append({"aluno": request.form.get("aluno"),"nota": request.form.get("nota")})
     return render_template("sobre.html",registros=registros)
 
-if __name__ == "__name__":
-    app.run(debug=True) 
+if __name__ == "__main__":
+    app.run(debug=True)

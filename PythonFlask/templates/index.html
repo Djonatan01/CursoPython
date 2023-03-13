@@ -3,17 +3,17 @@
         
     <h2 style="text-align: center;">Lista de frutas</h2>
     <hr>
-    <ol>
+    <ul class="list-group">
         {% for fruta in frutas %}
-
-            <li>{{fruta}}</li>
-
+            <li class="list-group-item">{{fruta}}</li>
         {% endfor %}
-    </ol>
-    <form action="{{url_for('principal')}}" method="POST">
-        <label for="">Add Fruta</label>
-        <input type="text" name="fruta" required>
-        <button>Adcionar</button>
-    </form>
-
+    
+        <form action="{{url_for('principal')}}" method="POST">
+            <div class="form-group">
+                <label for="exemploFruta">Fruta</label>
+                <input class="form-control" id="exemploFruta" type="text" name="fruta" placeholder="Digite uma fruta">
+            </div>
+            <button class="btn btn-success">Adicionar</button>
+        </form>
+    </ul>
 {% endblock conteudo %}
