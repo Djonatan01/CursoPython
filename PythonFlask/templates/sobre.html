@@ -1,19 +1,34 @@
 {% extends 'base.html' %}
-{% block conteudo %}
+{% block conteúdo %}
     <h1 style="text-align: center;">Diário do professor</h1>
     <hr>
-    {% for registro in registros %}
-        <details>
-            <summary>{{registro.aluno}}</summary>
-            <p>{{registro.nota}}</p>
-        </details>
-    {% endfor %}
-
     <form action="{{url_for('sobre')}}" method="post">
-        <label for="">Aluno</label>
-        <input type="text" name="aluno" required>
-        <label for="">Nota</label>
-        <input type="text" name="nota" required>
-        <button>Adicionar</button>
+        <div class="form-control">
+            <label>Aluno</label>
+            <input type="text" name="aluno" class="form-control" required placeholder="Digite o nome do aluno">
+        </div>
+        <div class="form-control">
+            <label for="">Nota</label>
+            <input type="text" name="nota" class="form-control" required placeholder="Digite uma nota">
+        </div>
+        <button class="btn btn-primary">Adicionar</button>
     </form>
-{% endblock conteudo %}
+    <hr>
+    <div class="row">
+        {% for registro in registros %}
+            <div class="col-md-2">
+                <p>
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample_{{registro.aluno}}" role="button" aria-expanded="false" aria-controls="collapseExample_{{registro.aluno}}">
+                        {{registro.aluno}}
+                    </a>
+                </p>
+                <div class="collapse" id="collapseExample_{{registro.aluno}}">
+                    <div class="card card-body">
+                        {{registro.nota}}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock conteúdo %}

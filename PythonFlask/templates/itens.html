@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block conteúdo %}
+        
+    <h2 style="text-align: center;">Teste de itens </h2>
+    <hr>
+    <form action="{{url_for('itens')}}" method="POST">
+        <div class="form-control">
+            <label for="listaItem">Add Itens</label>
+            <input type="text" name="Item" class="form-control" id="listaItem" placeholder="Informe o item">
+        </div>
+        <button class="btn btn-primary" >Salvar</button>
+    </form>
+    <ul class="list-group">    
+        <div class="row">    
+            <div class="row"></div>
+                {% for Item in Item %}
+                    <div class="col-md-2">
+                        <li class="list-group-item">{{Item}}</li>
+                    </div>
+                {% endfor %}
+        </div>
+    </ul>
+    
+{% endblock conteúdo %}

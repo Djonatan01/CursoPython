@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
-{% block conteudo %}
+{% block conteúdo %}
         
     <h2 style="text-align: center;">Lista de frutas</h2>
     <hr>
-    <ol>
-        {% for fruta in frutas %}
-
-            <li>{{fruta}}</li>
-
-        {% endfor %}
-    </ol>
     <form action="{{url_for('principal')}}" method="POST">
-        <label for="">Add Fruta</label>
-        <input type="text" name="fruta" required>
-        <button>Adcionar</button>
+        <div class="form-control">
+            <label for="exemploFruta">Add Fruta</label>
+            <input type="text" name="fruta" class="form-control" id="exemploFruta" placeholder="Digite uma fruta">
+        </div>
+        <button class="btn btn-primary" >Adicionar</button>
     </form>
+    <ul class="list-group">
+        {% for recebeFrutas in recebeFrutas %}
+            <li class="list-group-item">{{recebeFrutas}}</li>
+        {% endfor %}
+    </ul>
 
-{% endblock conteudo %}
+{% endblock conteúdo %}
