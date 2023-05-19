@@ -52,5 +52,3 @@ if __name__ == "__main__":
     db.create_all()
     app.run(debug=True)
     
-#set FLASK_ENV=development serve para ativar o modo debug    
-#flask run serve para ativar o python flask e rodar o servidor
