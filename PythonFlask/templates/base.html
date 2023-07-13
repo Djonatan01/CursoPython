@@ -19,6 +19,9 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{url_for('principal')}}">Home</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url_for('lista_cursos')}}">Cursos</a>
+              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Selecione a pagina desejada!
@@ -35,7 +38,7 @@
       </nav>
       <div class="container">
         {% block conteúdo %}
-            
+
         {% endblock conteúdo %}
       </div>
     <!-- #region estilo da pagina bootstrap (JS bund) verificar como baixar para usar no local-->

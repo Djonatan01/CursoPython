@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block conteúdo %}
+
+<h2 style="text-align: center;">Cadastro de novo curso</h2>
+<hr>
+<form class="form-control" action="{{url_for('cadastar_cursos')}}" method="post">
+    <label for="">Nome:</label>
+    <input class="form-control" type="text" name="nome" placeholder="Nome do curso" required>
+
+    <label for="">Descrição curso:</label>
+    <input class="form-control" type="text" name="desc_curso" placeholder="Descrição do curso" required>
+
+    <label for="">Total de horas do curso:</label>
+    <input class="form-control" type="number" name="ch_curso" placeholder="Carga horária do curso" required>
+    <br>
+    <button class="btn btn-secondary">Adicionar</button>
+</form>
+{% endblock conteúdo %}
